@@ -1,0 +1,100 @@
+{
+  "configVersion": 1,
+  "timestamp": 1686174542457,
+  "index": "/desarrollo_framework_avanzado_PEC5_2/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/desarrollo_framework_avanzado_PEC5_2/favicon.ico",
+        "/desarrollo_framework_avanzado_PEC5_2/index.html",
+        "/desarrollo_framework_avanzado_PEC5_2/main.5b74f194dcdab56e.js",
+        "/desarrollo_framework_avanzado_PEC5_2/manifest.webmanifest",
+        "/desarrollo_framework_avanzado_PEC5_2/polyfills.36201ad2d11fbb42.js",
+        "/desarrollo_framework_avanzado_PEC5_2/runtime.080825e25f44479b.js",
+        "/desarrollo_framework_avanzado_PEC5_2/styles.abc6d54c123c2e41.css"
+      ],
+      "patterns": [
+        "https:\\/\\/cdn\\.jsdelivr\\.net\\/npm\\/bootstrap@5\\.0\\.2\\/dist\\/css\\/bootstrap\\.min\\.css"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/desarrollo_framework_avanzado_PEC5_2/assets/css/animate.css",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-128x128.png",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-144x144.png",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-152x152.png",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-192x192.png",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-384x384.png",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-512x512.png",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-72x72.png",
+        "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "marvel-api",
+      "patterns": [
+        "https:\\/\\/gateway\\.marvel\\.com:443\\/v1\\/public\\/"
+      ],
+      "strategy": "freshness",
+      "maxSize": 10,
+      "maxAge": 3600000,
+      "timeoutMs": 1000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/desarrollo_framework_avanzado_PEC5_2/assets/css/animate.css": "1a1f22a40beae7a4bf83ff81f7c6b8be7cfd7e59",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/desarrollo_framework_avanzado_PEC5_2/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/desarrollo_framework_avanzado_PEC5_2/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/desarrollo_framework_avanzado_PEC5_2/index.html": "e2cdf318c478f4450f3d36ea5b6bf5d20f0b28f2",
+    "/desarrollo_framework_avanzado_PEC5_2/main.5b74f194dcdab56e.js": "3056fb4dd14a1e6fa43e4173b2b95c72c28aaff9",
+    "/desarrollo_framework_avanzado_PEC5_2/manifest.webmanifest": "647db4fba4be264d65d1cbc9d3c6606d05610dcf",
+    "/desarrollo_framework_avanzado_PEC5_2/polyfills.36201ad2d11fbb42.js": "aa0b08f3c4e7890b4b91b5ed02c53f7f7a2de507",
+    "/desarrollo_framework_avanzado_PEC5_2/runtime.080825e25f44479b.js": "a654f83c4394d600fdf21c3eb5fe9400bac347c2",
+    "/desarrollo_framework_avanzado_PEC5_2/styles.abc6d54c123c2e41.css": "b15d754c0124297ba10a576726135ecdc49a8ecd"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
