@@ -1,0 +1,66 @@
+<div class="container">
+    <mat-toolbar color="primary">
+        <div class="col-md-9">
+            <h1>Characters</h1>
+        </div>
+        <div class="col-md-3">
+            <mat-button-toggle-group [value]="toggle" (change)="toggleView($event)">
+                <mat-button-toggle [value]="true">
+                    <fa-icon class="text-primary" [icon]="faTableCells"></fa-icon>
+                </mat-button-toggle>
+                <mat-button-toggle [value]="false">
+                    <fa-icon class="text-primary" [icon]="faTableList"></fa-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </mat-toolbar>
+    <div class="row" *ngIf="status">
+        <div class="col">
+            <div class="text-center">
+                <mat-progress-spinner diameter=50 mode="indeterminate" color="accent">
+                </mat-progress-spinner>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!toggle">
+        <ul class="list-group">
+            <a *ngFor="let character of characters" [routerLink]="['/character', character.id]" class="list-group-item list-group-item-action animate__animated
+            animate__bounce animate__fadeIn">
+                <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt=""
+                    style="width: 100px; height: 100px;"> {{character.id}} -
+                {{character.name}} </a>
+        </ul>
+    </div>
+    <div class="content" *ngIf="toggle">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let character of characters">
+                <mat-card class="mat-elevation-z4" fxLayout="column" fxLayoutAlign="center">
+                    <a [routerLink]="['/character', character.id]">
+                        <img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}"
+                            alt="photo of character" style="width: 100%; height: 100%; margin:0 auto;">
+                    </a>
+                    <mat-card-header style="margin:0 auto;">
+                        <mat-card-title>{{character.name}}</mat-card-title>
+                        <mat-card-subtitle>{{character.id}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button class="btn btn-primary" mat-button
+                            [routerLink]="['/character', character.id]">DETAILS</button>
+                    </mat-card-actions>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

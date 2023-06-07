@@ -1,0 +1,120 @@
+<div class="container mt-5">
+    <div class="row animate__animated animate__bounce animate__fadeIn">
+        <ng-container *ngIf="character">
+            <div class="row">
+                <div class="col-md-9">
+                    <h1>
+                        <p> {{character.id}} - {{character.name}} </p>
+                    </h1>
+                    <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt=""
+                        style="width: 500px; height: 500px; margin: 0 auto;">
+                </div>
+                <div class="col-md-3">
+                    <a routerLink="/" class="btn btn-danger">Back</a>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <button [ngClass]="{'btn btn-warning': showDetails, 'btn btn-info': !showDetails}"
+                        (click)="ToggleDetails()">{{ labelDetails }}</button>
+                </div>
+            </div>
+            <div class="row mt-4" *ngIf="showDetails">
+                <h2><strong>Description</strong></h2>
+                <p [innerHtml]="character.description"></p>
+                <mat-accordion class="headers-align">
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <strong>Comics</strong>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <div class="row">
+                            <div *ngFor="let comic of character.comics.items"
+                                class="col-6 col-sm-3 col-md-3 col-lg-2 mb-3">
+                                <div class="card bg-dark text-white">
+                                    {{comic.name}}
+                                </div>
+                            </div>
+                        </div>
+                        <mat-action-row>
+                            <button class="link link-primary" mat-button (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3><strong>Events:</strong></h3>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <div class="row">
+                            <div *ngFor="let event of character.events.items"
+                                class="col-6 col-sm-3 col-md-3 col-lg-2 mb-3">
+                                <div class="card bg-dark text-white">
+                                    {{event.name}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <mat-action-row>
+                            <button class="link link-warning" mat-button (click)="prevStep()">Previous</button>
+                            <button class="link link-primary" mat-button (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3><strong>Series:</strong></h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+
+                        <div class="row">
+                            <div *ngFor="let serie of character.series.items"
+                                class="col-6 col-sm-3 col-md-3 col-lg-2 mb-3">
+                                <div class="card bg-dark text-white">
+                                    {{serie.name}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <mat-action-row>
+                            <button class="link link-warning" mat-button (click)="prevStep()">Previous</button>
+                            <button class="link link-primary" mat-button (click)="nextStep()">Next</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h3><strong>Stories:</strong></h3>
+                            </mat-panel-title>
+
+                        </mat-expansion-panel-header>
+
+                        <div class="row">
+
+                            <div *ngFor="let story of character.stories.items"
+                                class="col-6 col-sm-3 col-md-3 col-lg-2 mb-3">
+                                <div class="card bg-dark text-white">
+                                    {{story.name}}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <mat-action-row>
+                            <button class="link link-warning" mat-button (click)="prevStep()">Previous</button>
+                            <button class="link link-primary" mat-button (click)="nextStep()">End</button>
+                        </mat-action-row>
+                    </mat-expansion-panel>
+
+                </mat-accordion>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
